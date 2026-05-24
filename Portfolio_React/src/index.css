@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", "Inter", sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-anzo1: "anzo1", sans-serif;
+  --font-anzo2: "anzo2", sans-serif;
+  --font-anzo3: "anzo3", sans-serif;
+  --font-anzo4: "anzo4", sans-serif;
+  --font-anzo5: "anzo5", sans-serif;
+
+  --color-primary: #8b5cf6;
+  --color-secondary: #3b82f6;
+  --color-accent: #a855f7;
+  --color-dark: #09090b;
+}
+
+@font-face {
+  font-family: anzo1;
+  src: url(./file.woff2);
+}
+@font-face {
+  font-family: anzo2;
+  src: url(./Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: anzo3;
+  src: url(./assets/Anton-Regular.ttf);
+}
+@font-face {
+  font-family: anzo4;
+  src: url(./Oswald-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: anzo5;
+  src: url(./Oswald-VariableFont_wght.ttf);
+}
+
+/* Custom premium styles */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-dark);
+}
+
+#tiltDiv {
+  width: fit-content;
+}
+
+#page1_in {
+  position: relative;
+  perspective: 1500px;
+}
+
+#sectionText {
+  position: relative;
+  perspective: 2000px;
+}
+
+.rotateText {
+  transform-origin: 100% 80%;
+}
+
+/* Glassmorphism panel */
+.glass-panel {
+  background: rgba(15, 15, 20, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(20, 20, 30, 0.8);
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.2);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Neon Glow Effect */
+.neon-glow {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+}
+.neon-glow-blue {
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.25);
+}
+.text-glow {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Hide default cursor on desktop when custom cursor is active */
+.custom-cursor-active,
+.custom-cursor-active * {
+  cursor: none !important;
+}
