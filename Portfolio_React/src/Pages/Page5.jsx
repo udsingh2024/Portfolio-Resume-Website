@@ -8,6 +8,17 @@ const Page5 = () => {
 
   const projects = [
     {
+      title: 'BharatiFastNews Portal',
+      role: 'Founder & Lead Fullstack Developer',
+      stack: ['React.js', 'Node.js', 'Express', 'MongoDB', 'SEO Modules'],
+      desc: 'A live local news publication portal architected and launched from scratch, drawing 500+ regular active users. Engineered highly responsive layout scalability, media file uploads, database schemas, and search ranking configurations.',
+      gitLink: 'https://github.com/udsingh2024',
+      liveLink: 'https://bharatifastnews.com/',
+      highlight: true,
+      glow: 'shadow-amber-500/20 border-amber-500/30 ring-1 ring-amber-500/20',
+      gradient: 'from-amber-600/20 via-yellow-600/5 to-transparent',
+    },
+    {
       title: 'XpertAdviceHub',
       role: 'Lead Fullstack Developer',
       stack: ['MERN Stack', 'Node.js', 'MongoDB', 'JWT Auth'],
@@ -88,9 +99,17 @@ const Page5 = () => {
                 
                 {/* Card Header metadata */}
                 <div className="flex items-center justify-between border-b border-white/5 pb-4">
-                  <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block">
-                    PROJECT 0{idx + 1}
-                  </span>
+                  <div className="flex items-center gap-3">
+                    <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block">
+                      PROJECT 0{idx + 1}
+                    </span>
+                    {project.highlight && (
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-400 text-[9px] font-mono font-bold tracking-wide animate-pulse">
+                        <span className="h-1.5 w-1.5 rounded-full bg-amber-500"></span>
+                        LIVE PRODUCTION
+                      </span>
+                    )}
+                  </div>
                   <span className="text-[10px] font-mono text-primary font-bold tracking-widest uppercase">
                     {project.role}
                   </span>
@@ -120,16 +139,30 @@ const Page5 = () => {
                 </div>
 
                 {/* Footer action links */}
-                <div className="border-t border-white/5 pt-6 mt-6 flex items-center justify-between">
-                  <a
-                    href={project.gitLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-xs font-bold text-white hover:text-primary transition-colors cursor-pointer group"
-                  >
-                    <i className="ri-github-fill text-lg group-hover:scale-110 transition-transform"></i> View Repository
-                  </a>
-                  <span className="text-[10px] font-mono text-zinc-500">MERN DEVELOPMENT</span>
+                <div className="border-t border-white/5 pt-6 mt-6 flex items-center justify-between flex-wrap gap-4">
+                  <div className="flex items-center gap-6">
+                    <a
+                      href={project.gitLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-xs font-bold text-white hover:text-primary transition-colors cursor-pointer group"
+                    >
+                      <i className="ri-github-fill text-lg group-hover:scale-110 transition-transform"></i> View Code
+                    </a>
+                    {project.liveLink && (
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-white transition-colors cursor-pointer"
+                      >
+                        Launch App <i className="ri-external-link-line"></i>
+                      </a>
+                    )}
+                  </div>
+                  <span className="text-[10px] font-mono text-zinc-500">
+                    {project.liveLink ? 'PRODUCTION DEPLOYED' : 'MERN DEVELOPMENT'}
+                  </span>
                 </div>
 
               </div>
